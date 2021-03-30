@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "174797361251",
+    "project_id": "e-inklogin",
+    "storage_bucket": "e-inklogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174797361251:android:46de7323a967c7023da856",
+        "android_client_info": {
+          "package_name": "com.example.e_ink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174797361251-tspshs9smu3ip79o1ejncbcignbo8n3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmqCB01gpQ6PcSIG3sNn5Hr0KQwIKDgyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174797361251-tspshs9smu3ip79o1ejncbcignbo8n3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

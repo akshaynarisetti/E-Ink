@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/style"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundimage"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="8dp"
-    android:background="@drawable/backgroundimage"
-    tools:context=".MainActivity"
-    android:gravity="center_horizontal"
->
-     <ImageView
+    tools:context=".activities.MainActivity">
+
+    <!--  <ImageView
         android:id="@+id/imageView"
         android:padding="10dp"
         android:layout_marginTop="30dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
 
-        />
-<TextView
-    android:id="@+id/welcome"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-   android:text="Welcome"
-   android:textSize="51dp"
-   android:textColor="@color/white"
+        /> -->
 
-   android:gravity="center_horizontal"
-    android:textStyle="bold"
 
-    />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvImages"
+        android:layout_width="366dp"
+        android:layout_height="468dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297" />
 
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/camimage"
-        android:layout_marginTop="180dp"
+        android:background="@drawable/shape_button_main_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/camimagewithoutbg"
+
         />
 
 
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

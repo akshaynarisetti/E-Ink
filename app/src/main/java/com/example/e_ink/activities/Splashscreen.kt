@@ -1,23 +1,18 @@
-package com.example.e_ink
+package com.example.e_ink.activities
 
-import android.app.ActionBar
 import android.content.Intent
-import android.media.Image
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.ParcelFileDescriptor
-import android.text.Layout
 import android.view.View
-import android.view.ViewManager
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import org.w3c.dom.Text
+import com.example.e_ink.R
 
 
 class Splashscreen : AppCompatActivity() {
@@ -48,8 +43,12 @@ val SPLASH_SCREEN = 3000
         setContentView(R.layout.activity_splashscreen)
         val actionBar = supportActionBar
         actionBar!!.hide()
-        topAnimation = AnimationUtils.loadAnimation(this,R.anim.top_animation)
-        bottomAnimation = AnimationUtils.loadAnimation(this,R.anim.bottom_animation)
+        topAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.top_animation
+        )
+        bottomAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.bottom_animation
+        )
        imageView = findViewById(R.id.hr_image)
         title_txt = findViewById(R.id.title_text)
         description_txt = findViewById(R.id.title_text2)
@@ -59,7 +58,7 @@ val SPLASH_SCREEN = 3000
         description_txt.animation = bottomAnimation
 
         Handler().postDelayed({
-          val intent = Intent(this,MainActivity::class.java)
+          val intent = Intent(this, IntroActivity::class.java)
             startActivity(intent)
             finish()
 

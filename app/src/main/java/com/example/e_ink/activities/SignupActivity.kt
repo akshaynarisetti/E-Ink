@@ -4,29 +4,42 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.e_ink.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.activity_forget_password.*
 import kotlinx.android.synthetic.main.activity_signup.*
+import kotlinx.android.synthetic.main.activity_signup.animationView
 
 class SignupActivity : BaseAcitivity() {
+
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_signup)
+
+        setupActionBar()
+
+        btn_sign_up.setOnClickListener {
+            closeKeyboard()
+            registerUser()
+        }
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-setupActionBar()
 
-        btn_sign_up.setOnClickListener {
-            registerUser()
-        }
+
+        val attrib = window.attributes
+        attrib.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+
 
 
 
@@ -52,9 +65,9 @@ setupActionBar()
         val password : String = et_password.text.toString().trim{ it <= ' '}
 
         if(validateForm(name,email, password)){
-            showProgressDialog("Please wait")
+            signuplottie.visibility = View.VISIBLE
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
-                hideProgressDialog()
+
                 if(task.isSuccessful){
                     val firebaseUser : FirebaseUser = task.result!!.user!!
                     val registeredEmail  = firebaseUser.email!!
@@ -67,7 +80,8 @@ setupActionBar()
                 }
             }
         }
-    }
+        }
+
 
     private fun validateForm(name: String,email: String,password: String) : Boolean{
         return when{

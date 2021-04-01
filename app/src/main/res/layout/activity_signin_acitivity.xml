@@ -83,7 +83,14 @@
                         android:hint="@string/password"
                         android:inputType="textPassword"
                         android:textSize="@dimen/et_text_size" />
+
+
                 </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 
                 <Button
                     android:id="@+id/btn_sign_in"
@@ -91,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/btn_marginStartEnd"
-                    android:layout_marginTop="@dimen/sign_up_screen_btn_marginTop"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="@dimen/btn_marginStartEnd"
                     android:background="@drawable/shape_button_rounded"
                     android:foreground="?attr/selectableItemBackground"
@@ -102,9 +109,55 @@
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/btn_text_size" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/tv_forgetPassword_redirector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Forgotten Password?"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_signup_redirector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SignUp?"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="18dp"
+                        />
+
+
+                </LinearLayout>
+
+
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:lottie_rawRes="@raw/signinlottie"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            />
     </LinearLayout>
 
 </LinearLayout>

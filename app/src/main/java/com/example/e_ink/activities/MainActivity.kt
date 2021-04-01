@@ -3,6 +3,7 @@ package com.example.e_ink.activities
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     var imageList : MutableList<Bitmap> = mutableListOf(bmp)
     val adapter = ImageAdapter(imageList)
     var i = 0
+    var image_rui : Uri? = null
     lateinit var currentPhotoPath: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

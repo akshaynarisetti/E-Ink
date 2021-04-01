@@ -1,9 +1,11 @@
 package com.example.e_ink.activities
 
 import  android.app.Dialog
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.e_ink.R
@@ -14,7 +16,7 @@ import kotlinx.android.synthetic.main.dialog_progress.*
 open class BaseAcitivity : AppCompatActivity() {
 
 private var doubleBackToExitPressedOnce = false
-  private  lateinit var mProgressDialog : Dialog
+  private lateinit var mProgressDialog : Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +63,18 @@ private var doubleBackToExitPressedOnce = false
         snackBar.show()
     }
 
+     fun closeKeyboard(){
+        val view = this.currentFocus
+        if(view != null){
+            val hideMe = getSystemService( Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            hideMe.hideSoftInputFromWindow(view.windowToken,0)
+
+        }
+
+
+
+
+    }
 
 
 

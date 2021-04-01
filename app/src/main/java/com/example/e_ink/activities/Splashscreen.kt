@@ -37,6 +37,11 @@ val SPLASH_SCREEN = 3000
         }
         window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
 
+        window.decorView.setOnSystemUiVisibilityChangeListener {
+            window.decorView.apply {
+                systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+            }
+        }
         val attrib = window.attributes
         attrib.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
     

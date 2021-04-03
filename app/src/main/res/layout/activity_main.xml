@@ -1,54 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/style"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundimage"
+    android:background="@color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".activities.MainActivity">
 
-    <!--  <ImageView
-        android:id="@+id/imageView"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-
-        /> -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_sign_in_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvImages"
-        android:layout_width="366dp"
-        android:layout_height="468dp"
+
+        <ImageButton
+            android:id="@+id/btn_pdfExport"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_button_main_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/exportpdf"
+            />
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_pdf_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:inputType="text"
+            android:text="new28-03-2021.pdf"
+            android:textSize="@dimen/et_text_size" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llScroll"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_button_main_camera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/camimagewithoutbg"
-
-        />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintVertical_bias="0.854"
+        >
 
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvImages"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.854" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
 
 
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/shape_button_main_camera"
+            app:srcCompat="@drawable/camerafilledimage"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

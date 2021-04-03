@@ -1,8 +1,7 @@
 package com.example.e_ink.activities
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
+
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.e_ink.R
 import kotlinx.android.synthetic.main.skeleton_images.view.*
 
-class ImageAdapter (var images : MutableList<Bitmap>) : RecyclerView.Adapter<ImageAdapter.imageViewHolder>() {
+class ImageAdapter (var images : MutableList<Uri?>) : RecyclerView.Adapter<ImageAdapter.imageViewHolder>() {
 
-inner class imageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class imageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): imageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.skeleton_images,parent,false)
@@ -26,9 +25,9 @@ inner class imageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onBindViewHolder(holder: imageViewHolder, position: Int) {
         holder.itemView.apply {
-            var d: Drawable = BitmapDrawable(resources,images[position])
-            imageView.setImageDrawable(d)
-                    // imageView.setImageBitmap(images[position])
+            var d: Uri? = images[position]
+            imageView.setImageURI(d)
+            // imageView.setImageBitmap(images[position])
 
         }
     }

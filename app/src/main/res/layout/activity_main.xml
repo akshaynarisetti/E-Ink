@@ -1,108 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--TODO (Step 1: Design the main activity navigation drawer.)-->
+<!--START-->
+<!--Here we will create another resource file as content_main and move this existing code to it.
+    After that we will design further.-->
+<!--Follow the steps as below:
+    1. Add the DrawerLayout as a parent layout.
+    2. Create another file as app_bar_main.xml and add the toolbar code in it and also include the content _main.xml file to it.
+    3. Here include the app_bar_main.xml file here.
+    4. Add the NavigationView component here.
+    5. Now create the nav_header_main.xml.
+    6. Now add the nav_header_main.xml file in the NavigationView as headerLayout.
+    7. Create add the menu resource folder if it is not added and create a file as activity_main_drawer.xml.
+    8. Now add the activity_main_drawer.xml file to NavigationView as menu.-->
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/style"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:padding="8dp"
-    tools:context=".activities.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_sign_in_activity"
+    <include
+        layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        >
+        android:layout_height="match_parent" />
 
-
-
-        <ImageButton
-            android:id="@+id/btn_pdfExport"
-            android:layout_width="45dp"
-            android:layout_height="40dp"
-            android:background="@drawable/shape_button_main_camera"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/exportpdf"
-            />
-
-
-
-
-    </androidx.appcompat.widget.Toolbar>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/et_pdf_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:inputType="text"
-            android:text="new28-03-2021.pdf"
-            android:textSize="@dimen/et_text_size" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <LinearLayout
-        android:id="@+id/llScroll"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854"
-        >
-
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvImages"
-            android:layout_width="match_parent"
-            android:layout_height="600dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.854" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        >
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
 
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="45dp"
-            android:layout_height="50dp"
-
-            android:background="@drawable/shape_button_main_camera"
-            app:srcCompat="@drawable/camerafilledimage"
-
-            />
-
-
-    </LinearLayout>
-
-
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,20 +1,18 @@
-package com.example.e_ink.activities
+package com.example.e_ink.activities.activities
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.e_ink.R
+import com.example.e_ink.activities.firebase.FirestoreClass
+import com.example.e_ink.activities.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import kotlinx.android.synthetic.main.activity_forget_password.*
 import kotlinx.android.synthetic.main.activity_signup.*
-import kotlinx.android.synthetic.main.activity_signup.animationView
 
 class SignupActivity : BaseAcitivity() {
 
@@ -44,6 +42,12 @@ class SignupActivity : BaseAcitivity() {
 
 
     }
+    fun userRegisteredSuccess(){
+        Toast.makeText(this,"you have succesfully registered",Toast.LENGTH_LONG).show()
+        hideProgressDialog()
+        FirebaseAuth.getInstance().signOut()
+        finish()
+    }
 
     private fun setupActionBar(){
 
@@ -71,9 +75,8 @@ class SignupActivity : BaseAcitivity() {
                 if(task.isSuccessful){
                     val firebaseUser : FirebaseUser = task.result!!.user!!
                     val registeredEmail  = firebaseUser.email!!
-                    Toast.makeText(this,"$name you have succesfully registered",Toast.LENGTH_LONG).show()
-                    FirebaseAuth.getInstance().signOut()
-                    finish()
+                    val user = User(firebaseUser.uid,name,registeredEmail)
+                    FirestoreClass().registerUser(this,user)
                 }else{
 
                     Toast.makeText(this,"Registration failed",Toast.LENGTH_SHORT).show()

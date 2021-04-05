@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Splashscreen"
+    tools:context = "com.example.e_ink.activities.activities.Splashscreen"
     android:orientation="vertical"
     android:padding="8dp"
     android:background="@drawable/ic_bg"

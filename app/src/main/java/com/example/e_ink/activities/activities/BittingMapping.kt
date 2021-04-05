@@ -1,6 +1,5 @@
-package com.example.e_ink.activities
+package com.example.e_ink.activities.activities
 
-import android.graphics.Bitmap
 import android.net.Uri
 
 data class BittingMapping (

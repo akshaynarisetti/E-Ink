@@ -1,18 +1,16 @@
-package com.example.e_ink.activities
+package com.example.e_ink.activities.activities
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.e_ink.R
+import com.example.e_ink.activities.models.User
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_forget_password.*
 import kotlinx.android.synthetic.main.activity_signin_acitivity.*
 import kotlinx.android.synthetic.main.activity_signin_acitivity.et_email_signin
 import kotlinx.android.synthetic.main.activity_signin_acitivity.toolbar_sign_in_activity
@@ -35,12 +33,13 @@ class SigninAcitivity : BaseAcitivity() {
         }
         tv_signup_redirector.setOnClickListener {
             closeKeyboard()
-            startActivity(Intent(this,SignupActivity::class.java))
+            startActivity(Intent(this,
+                SignupActivity::class.java))
             finish()
         }
         tv_forgetPassword_redirector.setOnClickListener {
             closeKeyboard()
-            startActivity(Intent(this,ForgetPasswordActivity::class.java))
+            startActivity(Intent(this, ForgetPasswordActivity::class.java))
             finish()
         }
 
@@ -68,6 +67,13 @@ class SigninAcitivity : BaseAcitivity() {
         }
 
         toolbar_sign_in_activity.setNavigationOnClickListener { onBackPressed() }
+    }
+
+    fun signInSuccess(user : User){
+        hideProgressDialog()
+        startActivity(Intent(this,MainActivity::class.java))
+        finish()
+
     }
 
     private fun signInRegisteredUser(){

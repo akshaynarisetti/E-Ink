@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO (Step 2: Create a content_main xml file.)-->
+<!--START-->
+<!--Move the activity_main xml file code to this file.-->
+    <!--END-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context="com.example.e_ink.activities.activities.MainActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="246dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvImages"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pdfExport"
+        app:layout_constraintStart_toEndOf="@+id/btn_ocr"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_pdf_name"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:inputType="text"
+            android:text="new28-03-2021.pdf"
+            android:textSize="@dimen/et_text_size"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="75dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvImages"
+        android:layout_width="391dp"
+        android:layout_height="462dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="435dp"
+        android:background="@drawable/shape_button_main_camera"
+        app:layout_constraintEnd_toEndOf="@+id/rvImages"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/rvImages"
+        app:layout_constraintTop_toTopOf="@+id/rvImages"
+        app:srcCompat="@drawable/camerafilledimage" />
+
+    <ImageButton
+        android:id="@+id/btn_pdfExport"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="7dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/rvImages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/exportpdf" />
+
+    <ImageButton
+        android:id="@+id/btn_ocr"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="7dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/rvImages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ocr" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

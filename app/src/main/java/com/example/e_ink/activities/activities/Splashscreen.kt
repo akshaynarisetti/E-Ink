@@ -1,4 +1,4 @@
-package com.example.e_ink.activities
+package com.example.e_ink.activities.activities
 
 import android.content.Intent
 import android.os.Build
@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.e_ink.R
+import com.example.e_ink.activities.firebase.FirestoreClass
 
 
 class Splashscreen : AppCompatActivity() {
@@ -63,8 +64,16 @@ val SPLASH_SCREEN = 3000
         description_txt.animation = bottomAnimation
 
         Handler().postDelayed({
-          val intent = Intent(this, IntroActivity::class.java)
-            startActivity(intent)
+            var currentUserID = FirestoreClass().getCurrentUserId()
+            if(currentUserID.isNotEmpty()){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+
+            }else{
+                val intent = Intent(this, IntroActivity::class.java)
+                startActivity(intent)
+            }
             finish()
 
         },SPLASH_SCREEN.toLong())

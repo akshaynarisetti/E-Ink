@@ -22,4 +22,7 @@
     <string name="please_wait">Please Wait&#8230;</string>
 
     <string name="sign_in_description_text">Enter your email id and password to sign in</string>
+
+    <string name="nav_my_profile">My Profile</string>
+    <string name="nav_sign_out">Sign Out</string>
 </resources>

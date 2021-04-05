@@ -1,4 +1,4 @@
-package com.example.e_ink.activities
+package com.example.e_ink.activities.activities
 
 import  android.app.Dialog
 import android.content.Context
@@ -23,8 +23,8 @@ private var doubleBackToExitPressedOnce = false
         setContentView(R.layout.activity_base_acitivity)
     }
 
-    fun showProgressDialog(text : String){
-        mProgressDialog = Dialog(this)
+    fun showProgressDialog(text : String,context : Context){
+        mProgressDialog = Dialog(context)
 
         mProgressDialog.setContentView(R.layout.dialog_progress)
         mProgressDialog.tv_progress_text.text = text
@@ -75,6 +75,7 @@ private var doubleBackToExitPressedOnce = false
 
 
     }
+
 
 
 

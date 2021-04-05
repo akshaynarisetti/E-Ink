@@ -6,15 +6,16 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
 
     defaultConfig {
         applicationId "com.example.e_ink"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -49,10 +50,18 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
     implementation 'com.airbnb.android:lottie:3.6.1'
     implementation 'androidx.activity:activity-ktx:1.2.0-alpha06'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.yalantis:ucrop:2.2.6-native'
+    final pspdfkit_version = '6.6.0'
+    implementation "com.pspdfkit:pspdfkit-ocr:$pspdfkit_version"
+    api "com.pspdfkit:pspdfkit-ocr-english:$pspdfkit_version"
+    implementation 'com.pspdfkit:pspdfkit:6.6.0'
+    implementation "androidx.multidex:multidex:2.0.1"
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.karumi:dexter:6.2.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

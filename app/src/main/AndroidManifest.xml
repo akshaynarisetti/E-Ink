@@ -11,59 +11,56 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EInk">
-
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-
-            />
+        android:theme="@style/Theme.EInk"
+        android:largeHeap="true">
 
 
 
-        <activity android:name=".activities.ForgetPasswordActivity"
+
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+        <activity
+            android:name=".activities.activities.ForgetPasswordActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-
-            >
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
 
 
         </activity>
-        <activity android:name=".activities.BaseAcitivity" />
-
+        <activity android:name=".activities.activities.BaseAcitivity" />
         <activity
-            android:name=".activities.SigninAcitivity"
+            android:name=".activities.activities.SigninAcitivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activities.SignupActivity"
+            android:name=".activities.activities.SignupActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activities.IntroActivity"
+            android:name=".activities.activities.IntroActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".activities.Splashscreen"
+            android:name=".activities.activities.Splashscreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".activities.MainActivity"
+        <activity
+            android:name=".activities.activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -73,6 +70,14 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <meta-data
+            android:name="pspdfkit_license_key"
+            android:value="P1zrN8J49u57gUQzfaBY_O5QTN9hE2vcFINnFI3jXdzs4K06NBxUBMUQhpyBM8YNkQMMLnJW5xmkIMndf8A7z6Lwf6q_9lKncD6usFFpAQ1vHYr3OlRLG2ZQCXfW4hU9h48_i3-S4U3RS-2JMsoNyFsb96WhLSObp8mVErDXawXzI8HJvAG_lGdFVbkd5kjvgIbqQubL_G1UrEYgMdHYWIXI2XESPh4loNvmN7FC_VcEqzIAlfug4EMC4uerEKX7AtMr9VMpOZy1JBALxgcCatN6QXmmh4Lz9PFlJnYNxwh36GnAL_-FN-W4wIXekmNarUBSQRh0xM6i8y8kZYt8jv7mCnZ2E857_Hb_SqgM3QebZpmam_-eR-mV8lCmG6oEuoSmNPKKjWcylzMmYmvkmjDGlB0llsWTjlxrXWkp2_8cz0VgAfpVyV6YZi_QOXwS1DHU8ZAfchZF63BW0nknQw==" />
+
+        <activity
+            android:name="com.pspdfkit.ui.PdfActivity"
+            android:windowSoftInputMode="adjustNothing" />
     </application>
 
 </manifest>

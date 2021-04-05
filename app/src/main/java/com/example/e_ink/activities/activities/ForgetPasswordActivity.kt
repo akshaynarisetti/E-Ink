@@ -1,18 +1,13 @@
-package com.example.e_ink.activities
+package com.example.e_ink.activities.activities
 
-import android.app.Activity
-import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.content.getSystemService
 import com.example.e_ink.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_forget_password.*

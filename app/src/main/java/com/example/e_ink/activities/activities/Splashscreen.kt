@@ -64,7 +64,7 @@ val SPLASH_SCREEN = 3000
         description_txt.animation = bottomAnimation
 
         Handler().postDelayed({
-            var currentUserID = FirestoreClass().getCurrentUserId()
+            var currentUserID = FirestoreClass().getCurrentUserID()
             if(currentUserID.isNotEmpty()){
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

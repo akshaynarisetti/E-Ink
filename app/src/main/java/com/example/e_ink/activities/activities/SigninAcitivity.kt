@@ -70,7 +70,6 @@ class SigninAcitivity : BaseAcitivity() {
     }
 
     fun signInSuccess(user : User){
-        hideProgressDialog()
         startActivity(Intent(this,MainActivity::class.java))
         finish()
 

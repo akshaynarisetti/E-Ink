@@ -50,18 +50,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="45dp"
-        android:layout_height="50dp"
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/main_screen_main_layout_padding"
+        >
 
-        android:layout_marginTop="435dp"
-        android:background="@drawable/shape_button_main_camera"
-        app:layout_constraintEnd_toEndOf="@+id/rvImages"
-        app:layout_constraintHorizontal_bias="0.501"
+-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llStart"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginEnd="92dp"
+        android:background="@drawable/item_color_accent_border_ripple_background"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toStartOf="@+id/rvImages"
-        app:layout_constraintTop_toTopOf="@+id/rvImages"
-        app:srcCompat="@drawable/camerafilledimage" />
+        app:layout_constraintTop_toTopOf="@+id/rvImages">
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/einkbtntran"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/btn_pdfExport"
@@ -69,7 +93,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="7dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/rvImages"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
@@ -84,7 +108,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="7dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/rvImages"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ocr" />

@@ -1,11 +1,10 @@
 package com.example.e_ink.activities.activities
 
-import android.app.AlertDialog
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.*
 import android.graphics.pdf.PdfDocument
 import android.net.Uri
@@ -15,19 +14,18 @@ import android.provider.Settings
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
-import android.view.inputmethod.InputMethodManager
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.e_ink.R
+import com.example.e_ink.activities.firebase.FirestoreClass
 import com.google.firebase.auth.FirebaseAuth
 import com.theartofdev.edmodo.cropper.CropImage
 import kotlinx.android.synthetic.main.activity_main.*
@@ -47,13 +45,11 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.pspdfkit.configuration.activity.PdfActivityConfiguration
 import com.pspdfkit.document.PdfDocumentLoader
-import com.pspdfkit.document.html.HtmlToPdfConverter.fromUri
 import com.pspdfkit.document.processor.PdfProcessor
 import com.pspdfkit.document.processor.PdfProcessorTask
 import com.pspdfkit.document.processor.ocr.OcrLanguage
 import com.pspdfkit.ui.PdfActivity
-import org.w3c.dom.Document
-import java.util.jar.Manifest
+import kotlinx.android.synthetic.main.nav_header_main.*
 
 
 class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedListener {
@@ -71,6 +67,10 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
     lateinit var currentPhotoPath: String
     var f = 0
     //
+    companion object {
+        const val MY_PROFILE_REQUEST_CODE: Int = 11
+
+    }
 
     private var btn: ImageButton? = null
 
@@ -101,6 +101,7 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
+        FirestoreClass().loadUserData(this@MainActivity)
 
 
         btn_ocr.setOnTouchListener { v, event ->
@@ -201,7 +202,7 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
         rvImages.adapter = adapter
         rvImages.layoutManager = LinearLayoutManager(this)
 
-        imageButton3.setOnClickListener {
+        llStart.setOnClickListener {
             // dispatchTakePictureIntent()
             Dexter.withContext(this)
                     .withPermissions(
@@ -262,6 +263,17 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
             currentPhotoPath = absolutePath
         }
     }
+    fun updateNavigationUserDetails(user :com.example.e_ink.activities.models.User){
+        val headerView = nav_view.getHeaderView(0)
+        Glide.with(this)
+                .load(user.image)
+                .centerCrop()
+                .placeholder(R.drawable.ic_user_place_holder)
+                .into(iv_user_image)
+        val navUsername = headerView.findViewById<TextView>(R.id.tv_username)
+        navUsername.text = user.name
+
+    }
 
     private fun showRationalDialogForPermissions() {
         androidx.appcompat.app.AlertDialog.Builder(this)
@@ -295,7 +307,17 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
 
             imageList.add(image_rui)
             adapter.notifyDataSetChanged()
+
         }
+        if (resultCode == Activity.RESULT_OK
+            && requestCode == MY_PROFILE_REQUEST_CODE
+        ) {
+            // Get the user updated details.
+            FirestoreClass().loadUserData(this@MainActivity)
+        } else {
+            Log.e("Cancelled", "Cancelled")
+        }
+
     }
 
     private fun dispatchTakePictureIntent() {
@@ -421,14 +443,7 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
 
 
 
-        companion object {
-            fun loadBitmapFromView(v: View?, width: Int, height: Int): Bitmap {
-                val b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-                val c = Canvas(b)
-                v!!.draw(c)
-                return b
-            }
-        }
+
 
 
 
@@ -445,12 +460,13 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
         // TODO (Step 7: Implement members of NavigationView.OnNavigationItemSelectedListener.)
         // START
         override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-            // TODO (Step 9: Add the click events of navigation menu items.)
-            // START
             when (menuItem.itemId) {
                 R.id.nav_my_profile -> {
 
-                    Toast.makeText(this@MainActivity, "My Profile", Toast.LENGTH_SHORT).show()
+                    // TODO (Step 2: Launch the my profile activity for Result.)
+                    // START
+                    startActivityForResult(Intent(this@MainActivity, MyProfileActivity::class.java), MY_PROFILE_REQUEST_CODE)
+                    // END
                 }
 
                 R.id.nav_sign_out -> {
@@ -465,7 +481,6 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
                 }
             }
             drawer_layout.closeDrawer(GravityCompat.START)
-            // END
             return true
         }
         // END

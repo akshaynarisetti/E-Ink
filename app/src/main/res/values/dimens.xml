@@ -47,5 +47,22 @@
     <dimen name="nav_user_name_text_size">18sp</dimen>
     <dimen name="nav_image_circular_border_width">1dp</dimen>
     <dimen name="nav_divider_height">0.5dp</dimen>
+
+
+    <dimen name="main_screen_image_height">220dp</dimen>
+    <dimen name="main_screen_main_layout_padding">5dp</dimen>
+    <dimen name="start_button_size">150dp</dimen>
+    <dimen name="start_button_margin">20dp</dimen>
+    <dimen name="start_button_label_textsize">22sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="my_profile_screen_content_marginStartEnd">16dp</dimen>
+    <dimen name="my_profile_screen_content_marginTopBottom">10dp</dimen>
+    <dimen name="my_profile_screen_content_padding">16dp</dimen>
+    <dimen name="my_profile_user_image_size">100dp</dimen>
+    <dimen name="my_profile_name_til_marginTop">25dp</dimen>
+    <dimen name="my_profile_et_email_marginTop">20dp</dimen>
+    <dimen name="my_profile_et_mobile_marginTop">20dp</dimen>
+    <dimen name="my_profile_btn_update_marginTop">30dp</dimen>
 </resources>
 

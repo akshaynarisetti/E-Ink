@@ -240,7 +240,7 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
                 adapter.notifyDataSetChanged()
                 et_pdf_name.visibility = View.VISIBLE
                 btn_pdfExport.visibility = View.VISIBLE
-                btn_ocr.visibility = View.VISIBLE
+               // btn_ocr.visibility = View.VISIBLE
 
 
             }

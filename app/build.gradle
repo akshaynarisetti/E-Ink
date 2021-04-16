@@ -58,6 +58,7 @@ dependencies {
     final pspdfkit_version = '6.6.0'
     implementation "com.pspdfkit:pspdfkit-ocr:$pspdfkit_version"
     api "com.pspdfkit:pspdfkit-ocr-english:$pspdfkit_version"
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
     implementation 'com.pspdfkit:pspdfkit:6.6.0'
     implementation "androidx.multidex:multidex:2.0.1"
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'

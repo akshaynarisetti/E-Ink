@@ -1,6 +1,6 @@
 package com.example.e_ink.activities.activities
 
-import  android.app.Dialog
+import android.app.Dialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -68,7 +68,6 @@ private var doubleBackToExitPressedOnce = false
         if(view != null){
             val hideMe = getSystemService( Context.INPUT_METHOD_SERVICE) as InputMethodManager
             hideMe.hideSoftInputFromWindow(view.windowToken,0)
-
         }
 
 

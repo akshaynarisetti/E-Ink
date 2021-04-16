@@ -48,7 +48,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+
+
+        />
 
   <!--  <LinearLayout
         android:layout_width="match_parent"
@@ -93,7 +96,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="7dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/rvImages"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
@@ -108,7 +111,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="7dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/rvImages"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ocr" />

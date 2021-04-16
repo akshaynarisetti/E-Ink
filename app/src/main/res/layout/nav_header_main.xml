@@ -24,6 +24,9 @@
         android:contentDescription="@string/image_contentDescription"
         android:src="@drawable/ic_user_place_holder" />
 
+
+
+
     <TextView
         android:id="@+id/tv_username"
         android:layout_width="wrap_content"

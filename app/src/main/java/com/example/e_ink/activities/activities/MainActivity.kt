@@ -97,10 +97,15 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
+
+
+
+
         FirestoreClass().loadUserData(this@MainActivity)
 
 
@@ -240,7 +245,7 @@ class MainActivity : BaseAcitivity(),NavigationView.OnNavigationItemSelectedList
                 adapter.notifyDataSetChanged()
                 et_pdf_name.visibility = View.VISIBLE
                 btn_pdfExport.visibility = View.VISIBLE
-               // btn_ocr.visibility = View.VISIBLE
+                btn_ocr.visibility = View.VISIBLE
 
 
             }

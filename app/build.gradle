@@ -55,11 +55,12 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.2.0-alpha06'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.yalantis:ucrop:2.2.6-native'
-    final pspdfkit_version = '6.6.0'
+    final pspdfkit_version = '6.6.2'
+    implementation "com.pspdfkit:pspdfkit:$pspdfkit_version"
     implementation "com.pspdfkit:pspdfkit-ocr:$pspdfkit_version"
     api "com.pspdfkit:pspdfkit-ocr-english:$pspdfkit_version"
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
-    implementation 'com.pspdfkit:pspdfkit:6.6.0'
+    implementation 'com.pspdfkit:pspdfkit:6.6.2'
     implementation "androidx.multidex:multidex:2.0.1"
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
     implementation 'com.karumi:dexter:6.2.2'

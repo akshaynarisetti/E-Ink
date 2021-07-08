@@ -79,9 +79,6 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <meta-data
-            android:name="pspdfkit_license_key"
-            android:value="P1zrN8J49u57gUQzfaBY_O5QTN9hE2vcFINnFI3jXdzs4K06NBxUBMUQhpyBM8YNkQMMLnJW5xmkIMndf8A7z6Lwf6q_9lKncD6usFFpAQ1vHYr3OlRLG2ZQCXfW4hU9h48_i3-S4U3RS-2JMsoNyFsb96WhLSObp8mVErDXawXzI8HJvAG_lGdFVbkd5kjvgIbqQubL_G1UrEYgMdHYWIXI2XESPh4loNvmN7FC_VcEqzIAlfug4EMC4uerEKX7AtMr9VMpOZy1JBALxgcCatN6QXmmh4Lz9PFlJnYNxwh36GnAL_-FN-W4wIXekmNarUBSQRh0xM6i8y8kZYt8jv7mCnZ2E857_Hb_SqgM3QebZpmam_-eR-mV8lCmG6oEuoSmNPKKjWcylzMmYmvkmjDGlB0llsWTjlxrXWkp2_8cz0VgAfpVyV6YZi_QOXwS1DHU8ZAfchZF63BW0nknQw==" />
 
         <activity
             android:name="com.pspdfkit.ui.PdfActivity"

@@ -20,7 +20,7 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
-        maven { url "https://customers.pspdfkit.com/maven/" }
+        maven { url = uri("https://customers.pspdfkit.com/maven") }
         mavenCentral()
     }
 }

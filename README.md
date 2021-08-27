@@ -4,7 +4,7 @@
 <img src="https://github.com/akshaynarisetti/E-Ink/blob/master/app/src/main/res/drawable-v24/mainappicon.png" width="425"/>
 E-Ink is an Android Document scanner with OCR  capabilities completely written in native kotlin
 
-It has been integeated with Firebase (Cloud Firestore 🔥  and Firebase Authentication)
+It has been integeated with Firebase (Cloud firestore 🔥  and Firebase Authentication)
 
 
 #Features
